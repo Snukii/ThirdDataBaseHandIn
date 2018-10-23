@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="MasterDEMO.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Pests</title>
+
+    <%-- Problems with Master page and stylesheets:  --%>
+    <%-- Sometimes stylesheets has to be renaed before changes can be seen  --%>
+    <%-- (probably related to caching)  --%>
+
+    <link href="Styles/Site1Master.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class ="header">
+                <asp:Label ID="LabelHeader" runat="server" CssClass="headertext" EnableTheming="False" Text="Pests"></asp:Label>
+                <br/>
+                <br/>
+                <div class="myMenuBar">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Login.aspx" Text="Log in"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Exterminator.aspx" Text="For exterminator"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Appointments.aspx" Text="Appointments"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
